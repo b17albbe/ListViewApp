@@ -2,7 +2,9 @@ package org.brohede.marcus.listviewapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,14 +31,22 @@ public class MainActivity extends AppCompatActivity {
         //                      an individual item in the ListView we are creating.
         // Here you should enter your code that fills the ListView
         // 1. Create an array
+        String[] rawData = {"Leif","Ulla","Kjell"};
         // 2. Create a List object with your array from step 1 as in-data
+        List<String> listData = new ArrayList<String>(Arrays.asList(rawData));
         // 3. Create an ArrayAdapter object that connects
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
+                R.id.my_item_textview,listData);
         //    * list_item_textview
         //    * my_item_textview
         //    * List object created in step 2
         // 4. Find the ListView layout element "my_listview" and create an object instance
+        ListView myListView = (ListView)findViewById(R.id.my_listview);
+        myListView.setAdapter(adapter);
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
+        adapter.add("Hilding");
         // 6. Style the ListView items according to Material Design
+
         //    See: https://material.io/guidelines/components/lists.html#lists-specs
         //    Look for "singel line specs" for "text only" lists and modify the list_item_textview
         //    accordingly
