@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+import android.util.Log;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String kjell = new String("Tomte!");
+        Toast.makeText(getApplicationContext(), kjell, Toast.LENGTH_SHORT).show();
+
+        Log.d("brom-debug",kjell);
         // The onCreate method is run when the app is created.
         // Before you can implement this you need to create the layout xml files that
         // will hold/show your data created here. You need three create things:
