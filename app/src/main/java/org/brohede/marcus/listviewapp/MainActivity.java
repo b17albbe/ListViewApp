@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
-        adapter.add("Hilding");
+        // adapter.add("Hilding");
         // 6. Style the ListView items according to Material Design
 
         //    See: https://material.io/guidelines/components/lists.html#lists-specs
