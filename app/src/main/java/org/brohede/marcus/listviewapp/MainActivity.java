@@ -2,6 +2,8 @@ package org.brohede.marcus.listviewapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String kjell = new String("Tomte!");
-        Toast.makeText(getApplicationContext(), kjell, Toast.LENGTH_SHORT).show();
+
 
         Log.d("brom-debug",kjell);
         // The onCreate method is run when the app is created.
@@ -49,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
         // 4. Find the ListView layout element "my_listview" and create an object instance
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), mountainNames[position] + "\n" + mountainLocations[position] + "\n" + mountainHeights[position], Toast.LENGTH_SHORT).show();
+            }
+        });
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
         adapter.add("Hilding");
         // 6. Style the ListView items according to Material Design
