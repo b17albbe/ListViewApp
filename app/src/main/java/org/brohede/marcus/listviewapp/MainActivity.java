@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //                      an individual item in the ListView we are creating.
         // Here you should enter your code that fills the ListView
         // 1. Create an array
-        String[] rawData = {"Leif","Ulla","Kjell"};
+        String[] rawData = {"Matterhorn","Mont Blanc","Denali"};
         // 2. Create a List object with your array from step 1 as in-data
         List<String> listData = new ArrayList<String>(Arrays.asList(rawData));
         // 3. Create an ArrayAdapter object that connects
